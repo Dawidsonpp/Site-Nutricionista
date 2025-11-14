@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutricionista Thais Cravo</title>
+    
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    
+    <!-- Nosso CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <nav>
+            <a href="#home" class="logo">Thais Cravo</a>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre mim</a></li>
+                <li><a href="#tratamentos">Tratamentos</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                
+            </ul>
+            <a href="#contato" class="btn-header">Consulta Nutricional</a>
+            <a href="#contato" class="btn-header">Personal ou Consultoria on-line</a>
+
+            <!-- BOTÃO HAMBÚRGUER (NOVO - SÓ APARECE EM TELAS MENORES) -->
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+        <!-- MENU MOBILE (NOVO - FICA ESCONDIDO ATÉ SER ATIVADO) -->
+    <div class="mobile-nav">
+        <a href="#home">Início</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#tratamentos">Tratamentos</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato">Contato</a>
+    </div>
+
+    <main>
+        <!-- ========= SEÇÃO INÍCIO (HOME) ========= -->
+        <section id="home">
+            <div class="home-content">
+                <h1>Nutrição e Personal que transforma <br/>Encontre sua melhor versão</h1>
+                <p>Cuidar da sua saúde nunca foi tão simples e prazeroso. Vamos juntos nessa jornada!</p>
+            </div>
+        </section>
+
+        <!-- ========= NOVA SEÇÃO PARALLAX ========= -->
+        <!-- Use uma de suas imagens que seja mais paisagem/fundo -->
+        <div class="parallax-container" style="background-image: url('images/Image9.jpg');">
+        </div>
+
+        <!-- ========= SEÇÃO SOBRE MIM (ATUALIZADA COM CREDENCIAIS) ========= -->
+        <section id="sobre">
+            <div class="container sobre-container">
+                <div class="sobre-imagem">
+                    <video autoplay muted loop playsinline>
+                        <source src="images/video.mp4" type="video/mp4">
+                        Seu navegador não suporta o vídeo.
+                    </video>
+                </div>
+                <div class="sobre-texto">
+                    <h2>Prazer, Thais Cravo!</h2>
+                    <p>Sou uma nutricionista e educadora fisica apaixonada por guiar meus pacientes e alunos em uma jornada de saúde e bem-estar. Com <strong>pós-graduação em Nutrição Clínica Funcional e especialização em Nutrição Endócrina Metabólica</strong>, meu trabalho é focado no atendimento clínico individualizado.</p>
+                    <p>Acredito que cada pessoa é única e, por isso, meu foco está no <strong>atendimento humanizado</strong>, na escuta ativa e na empatia para criar um plano alimentar que respeite sua rotina e promova uma relação saudável e prazerosa com a comida. Meu objetivo é promover sua qualidade de vida e bem-estar integral.</p>
+
+                    <!-- CAIXA DE CREDENCIAIS (NOVA) -->
+                    <div class="credentials-box">
+                        <div class="credential-item">
+                            <i class="fas fa-id-badge"></i>
+                            <div>
+                                <!-- Altere para o seu registro -->
+                                <strong>Nutricionista</strong>
+                                <span>CRN-9 Nº 26488</span>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <i class="fas fa-id-badge"></i>
+                            <div>
+                                <!-- Altere para o seu registro -->
+                                <strong>Profissional de Educação Física</strong>
+                                <span>CREF Nº 012349-G/MG</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contato" class="btn">Quero começar minha mudança</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========= NOVA SEÇÃO PARALLAX ========= -->
+        <!-- Use uma de suas imagens que seja mais paisagem/fundo -->
+        <div class="parallax-container" style="background-image: url('images/image12.jpeg');">
+        </div>
+
+        <!-- ========= SEÇÃO TRATAMENTOS (COM LAYOUT SPLIT-SCREEN) ========= -->
+        <section id="tratamentos">
+            <!-- Container apenas para o título principal da seção -->
+          <!--  <div class="container">
+                <h2>Como posso te ajudar</h2>
+            </div>
+        -->
+            <!-- BLOCO 1: NUTRIÇÃO (IMAGEM ESQUERDA, CARDS DIREITA) -->
+            <div class="treatment-block">
+                <div class="treatment-image">
+                    <img src="images/Image1.jpeg" alt="Nutricionista atendendo paciente">
+                </div>
+                <div class="treatment-cards">
+                    <div class="cards-content-wrapper">
+                        <h3>Nutrição Clínica e Esportiva</h3>
+                        <br />
+                        <div class="card-slider" data-slider="nutrition-slider">
+                            <div class="card active"><i class="fas fa-weight-scale"></i><h3>Obesidade e Emagrecimento</h3><p>Planos alimentares focados na perda de peso saudável e sustentável.</p></div>
+                            <div class="card"><i class="fas fa-heart-pulse"></i><h3>Doenças Crônicas</h3><p>Controle e prevenção de diabetes, hipertensão e colesterol.</p></div>
+                            <div class="card"><i class="fas fa-venus"></i><h3>Saúde da Mulher</h3><p>Acompanhamento para distúrbios hormonais, SOP, e menopausa.</p></div>
+                            <div class="card"><i class="fas fa-seedling"></i><h3>Acompanhamento Oncológico</h3><p>Suporte nutricional para pacientes com câncer, visando bem-estar.</p></div>
+                            <div class="card"><i class="fas fa-brain"></i><h3>Transtorno do Espectro Autista</h3><p>Nutrição focada na seletividade alimentar e qualidade de vida.</p></div>
+                            <div class="card"><i class="fas fa-dumbbell"></i><h3>Nutrição Esportiva</h3><p>Otimização da performance e recuperação muscular para atletas.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO 2: PERSONAL TRAINER (CARDS ESQUERDA, IMAGEM DIREITA) -->
+            <div class="treatment-block reverse-layout">
+                 <!-- Adicione a classe 'personal-image' aqui -->
+                 <div class="treatment-image personal-image">
+                    <img src="images/Image2.jpeg" alt="Pessoa se exercitando com acompanhamento">
+                </div>
+                <div class="treatment-cards">
+                    <div class="cards-content-wrapper">
+                        <h3>Consultoria Fitness</h3>
+                        <br />
+                        <div class="card-slider" data-slider="personal-slider">
+                           <div class="card active"><i class="fas fa-clipboard-list"></i><h3>Montagem de Treino Online</h3><p>Receba seu plano de treinos personalizado onde estiver.</p></div>
+                           <div class="card"><i class="fas fa-person-running"></i><h3>Personal Trainer Presencial</h3><p>Treinamento individualizado para maximizar seus resultados com segurança.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========= NOVA SEÇÃO PARALLAX ========= -->
+        <!-- Use uma de suas imagens que seja mais paisagem/fundo -->
+        <div class="parallax-container" style="background-image: url('images/Image8.jpg');">
+        </div>
+
+
+        <!-- ========= SEÇÃO DEPOIMENTOS ========= -->
+        <section id="depoimentos">
+            <div class="container">
+                <h2>O que meus pacientes dizem</h2>
+                <div class="slider">
+                    <div class="slide active">
+                        <p class="depoimento-texto">"O acompanhamento foi um divisor de águas na minha vida. Aprendi a comer melhor, sem culpa, e alcancei meus objetivos com saúde!"</p>
+                        <h4 class="depoimento-nome">- Maria S., 34 anos</h4>
+                    </div>
+                    <div class="slide">
+                        <p class="depoimento-texto">" Profissional incrível, atenciosa e competente. O plano alimentar foi super fácil de seguir e adaptado à minha rotina corrida."</p>
+                        <h4 class="depoimento-nome">- João P., 42 anos</h4>
+                    </div>
+                     <div class="slide">
+                        <p class="depoimento-texto">" Consegui melhorar muito meu desempenho nos treinos e minha recuperação muscular. Recomendo demais!"</p>
+                        <h4 class="depoimento-nome">- Ana L., 28 anos</h4>
+                    </div>
+                    <button class="slider-btn prev">&lt;</button>
+                    <button class="slider-btn next">&gt;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========= NOVA SEÇÃO PARALLAX ========= -->
+        <!-- Use uma de suas imagens que seja mais paisagem/fundo -->
+        <div class="parallax-container" style="background-image: url('images/Image11.jpg');">
+        </div>
+
+
+        <!-- ========= SEÇÃO CONTATO ========= -->
+        <section id="contato">
+            <div class="container contato-container">
+                <h2>Vamos começar sua transformação?</h2>
+                <p>Clique no botão abaixo para agendar sua consulta ou tirar dúvidas diretamente pelo WhatsApp.</p>
+                <!-- Altere o número 5531999999999 para o seu -->
+                <a href="https://wa.me/5531983034129" class="btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Agendar pelo WhatsApp
+                </a>
+                <div class="social-icons">
+                    <!-- Altere o '#' para o link do seu perfil -->
+                    <a href="https://www.instagram.com/thaiscravonutripersonal/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/thaiscravo/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Thais Cravo - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Nosso JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

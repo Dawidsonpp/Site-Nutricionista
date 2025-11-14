@@ -1,0 +1,722 @@
+/* GERAL E VARIÁVEIS */
+:root {
+    --primary-green: #2E5953;
+    --secondary-green: #4A8D8F;
+    --light-beige: #F5F3EF;
+    --dark-text: #333333;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-text);
+}
+
+.container {
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 70px 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 50px;
+}
+
+/* HEADER E NAVEGAÇÃO */
+#main-header {
+    background: var(--white);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1200;
+    transition: box-shadow 0.3s ease;
+}
+
+#main-header.scrolled {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-green);
+    transition: width 0.1s ease;
+}
+
+.nav-links a:hover::after {
+    width: 50%;
+}
+
+.btn-header {
+    background: var(--primary-green);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 400;
+    transition: background-color 0.2s ease;
+}
+
+.btn-header:hover {
+    background: var(--secondary-green);
+}
+
+
+/* SEÇÃO INÍCIO (HOME) */
+#home {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/Image4.jpeg');
+    background-size: cover;
+    background-position: center 29%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+.home-content h1 {
+    font-size: 2.5rem;
+    margin-top: 280px;
+    margin-bottom: 0px;
+}
+
+.home-content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0px auto 30px;
+}
+
+.btn {
+    background: var(--secondary-green);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: var(--primary-green);
+    transform: scale(1.05);
+}
+
+/* SEÇÃO SOBRE */
+#sobre {
+    background: var(--light-beige);
+}
+
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.sobre-imagem {
+    flex: 0.8;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    
+}
+
+.sobre-texto {
+    flex: 1.7;
+}
+
+.sobre-texto h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.sobre-texto p {
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+
+/* SEÇÃO TRATAMENTOS */
+.tratamentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.card i {
+    font-size: 3rem;
+    color: var(--secondary-green);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+/* SEÇÃO DEPOIMENTOS */
+#depoimentos {
+    background: var(--light-beige);
+}
+
+.slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.depoimento-texto {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.depoimento-nome {
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-green);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.slider-btn.prev { left: -20px; }
+.slider-btn.next { right: -20px; }
+
+/* SEÇÃO CONTATO */
+.contato-container {
+    text-align: center;
+    max-width: 700px;
+}
+
+.contato-container p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1DA851;
+    transform: scale(1.05);
+}
+
+.social-icons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icons a {
+    color: var(--primary-green);
+    font-size: 2rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-green);
+    transform: scale(1.2);
+}
+
+/* FOOTER */
+footer {
+    background: var(--primary-green);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* AJUSTE PARA O VÍDEO NA SEÇÃO SOBRE */
+.sobre-imagem video {
+    width: 100%;
+    max-width: 500px; /* Mesmo tamanho que a imagem tinha */
+    border-radius: 10px; /* Bordas arredondadas */
+    display: block; /* Garante que o vídeo não tenha espaços estranhos abaixo dele */
+}
+
+
+/* ANIMAÇÃO CONTÍNUA PARA A SEÇÃO HOME */
+
+/* 1. Define a nova animação com um ciclo completo */
+@keyframes continuousCycle {
+    /* --- FASE 1: APARECER (de 0% a 15% do tempo) --- */
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    15% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* --- FASE 2: PERMANECER VISÍVEL (de 15% a 85%) --- */
+    /* O texto fica estático na tela durante esta fase */
+    85% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* --- FASE 3: DESAPARECER (de 85% a 100%) --- */
+    /* O texto sobe um pouco e some antes de recomeçar o ciclo */
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* 2. Aplica a animação em loop aos elementos */
+.home-content h1,
+.home-content p,
+.home-content .btn {
+    /* Aplica a animação com duração de 10 segundos, em loop infinito */
+    animation-name: continuousCycle;
+    animation-duration: 10s; /* Duração total de cada ciclo */
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite; /* AQUI ESTÁ A MÁGICA DO LOOP */
+}
+
+/* 3. Adiciona um atraso (delay) diferente para cada elemento */
+/* Isso mantém o efeito de um aparecer depois do outro, mas agora em cada ciclo */
+
+/* O título (h1) começa no tempo 0 */
+.home-content h1 {
+    animation-delay: 0s;
+}
+
+/* O parágrafo (p) começa 0.3 segundos depois do título */
+.home-content p {
+    animation-delay: 0.3s;
+}
+
+/* O botão (.btn) começa 0.6 segundos depois do título */
+.home-content .btn {
+    animation-delay: 0.6s;
+}
+
+/* ESTILO PARA A CAIXA DE CREDENCIAIS NA SEÇÃO SOBRE */
+
+.credentials-box {
+    display: flex;
+    gap: 30px; /* Espaçamento entre os dois registros */
+    margin: 30px 0; /* Espaçamento acima e abaixo da caixa */
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--secondary-green); /* Detalhe de cor na borda */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.credential-item {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaçamento entre o ícone e o texto */
+}
+
+.credential-item i {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+}
+
+.credential-item div {
+    display: flex;
+    flex-direction: column; /* Coloca o título e o número um sobre o outro */
+}
+
+.credential-item strong {
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.credential-item span {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+/* LAYOUT SPLIT-SCREEN PARA A SEÇÃO DE TRATAMENTOS */
+
+/* A seção agora não tem padding lateral para permitir o conteúdo full-width */
+#tratamentos {
+    padding: 0;
+}
+
+/* O contêiner do título continua centralizado */
+/*
+#tratamentos .container {
+    padding-bottom: 10px;
+}
+*/
+.treatment-block {
+    display: flex;
+    width: 100%;
+    min-height: 80vh; /* Garante uma boa altura para o bloco */
+    background-color: var(--light-beige);
+}
+
+/* O segundo bloco inverte a ordem dos filhos (imagem e cards) */
+.treatment-block.reverse-layout {
+    flex-direction: row-reverse;
+}
+
+.treatment-image,
+.treatment-cards {
+    flex-basis: 50%; /* Cada lado ocupa exatamente 50% */
+}
+
+/* --- LADO DA IMAGEM --- */
+.treatment-image {
+    height: 80vh; /* Mesma altura do bloco pai */
+    padding: 20px;
+}
+
+.treatment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ESSENCIAL: a imagem cobre o espaço sem distorcer */
+}
+
+/* AJUSTE DE FOCO PARA A IMAGEM DO PERSONAL TRAINER */
+.personal-image img {
+    /* O padrão é 'center center'. 'top' foca na parte de cima da imagem. */
+    object-position: top; 
+}
+
+/* --- LADO DOS CARDS --- */
+.treatment-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.cards-content-wrapper {
+    max-width: 650px; /* Limita a largura do conteúdo para melhor leitura */
+    width: 100%;
+    height: 80%;
+}
+
+.treatment-cards h3 {
+    text-align: center;
+    font-size: 35px;
+}
+
+.card-slider {
+    position: relative;
+    min-height: 350px; /* Aumenta a altura para acomodar textos maiores */
+    width: 100%;
+}
+
+.card-slider .card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0.2s;
+    background: var(--white); /* Adiciona fundo branco aos cards para contraste */
+}
+
+.card-slider .card.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* ESTILO PARA A SEÇÃO PARALLAX */
+
+.parallax-container {
+    /* Altura da "janela" da imagem. Ajuste conforme necessário. */
+    min-height: 400px;
+    
+    /* A MÁGICA DO PARALLAX ACONTECE AQUI */
+    /* Fixa a imagem de fundo em relação à janela de visualização */
+    background-attachment: fixed;
+
+    /* Propriedades para garantir que a imagem fique bonita */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    background-size: cover; /* Faz a imagem cobrir todo o espaço sem distorcer */
+    
+    /* A imagem em si é definida no HTML para maior flexibilidade */
+}
+
+/* =================================================================== */
+/*                     REGRAS DE RESPONSIVIDADE                        */
+/* =================================================================== */
+
+/* ---- Para Telas de Tablet e Menores (até 992px) ---- */
+@media (max-width: 992px) {
+    /* Esconde o menu normal e o botão do header */
+    .nav-links,
+    .btn-header {
+        display: none;
+    }
+
+    /* Mostra o botão hambúrguer */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--primary-green);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    /* Estilo do menu mobile */
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background: var(--white);
+        position: fixed;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1100;
+    }
+
+    .mobile-nav.active {
+        transform: translateY(0);
+    }
+
+    .mobile-nav a {
+        text-decoration: none;
+        color: var(--dark-text);
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    /* Ajuste da seção HOME */
+    .home-content h1 {
+        font-size: 2rem;
+        margin-top: 100px;
+    }
+    
+    /* Ajuste da seção SOBRE */
+    .sobre-container {
+        flex-direction: column;
+    }
+
+    .sobre-texto h2 {
+        text-align: center;
+    }
+
+    /* Ajuste da seção TRATAMENTOS */
+    .treatment-block,
+    .treatment-block.reverse-layout {
+        flex-direction: column;
+    }
+
+    .treatment-image,
+    .treatment-cards {
+        flex-basis: auto;
+    }
+
+    .treatment-image {
+        height: auto; 
+        padding: 0;
+    }
+    
+    .treatment-image img {
+        object-fit: initial;
+        height: auto;
+    }
+    
+    /* Correção do layout dos CARDS */
+    .card-slider {
+        position: static;
+        min-height: unset;
+    }
+
+    .card-slider .card {
+        position: static;
+        opacity: 1;
+        transform: none;
+        visibility: visible;
+        width: 100%;
+        margin-bottom: 20px;
+        display: none;
+        transition: none;
+    }
+
+    .card-slider .card.active {
+        display: block;
+    }
+}
+
+
+/* ---- Para Telas de Celular (até 768px) ---- */
+@media (max-width: 768px) {
+    /* Reduz o padding geral das seções */
+    section {
+        padding: 50px 0;
+    }
+
+    #tratamentos {
+        padding: 50px 0 0 0; /* Ajuste específico para tratamentos */
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    /* Ajuste fino da seção HOME */
+    .home-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .home-content p {
+        font-size: 1rem;
+    }
+
+    /* Ajuste da caixa de credenciais */
+    .credentials-box {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    
+    /* Ajuste do slider de depoimentos */
+    .slider {
+        padding: 30px 20px;
+    }
+
+    .slider-btn.prev { left: -10px; }
+    .slider-btn.next { right: -10px; }
+
+    /* Ajustes finos para a seção de TRATAMENTOS */
+    .treatment-cards {
+        padding: 30px 20px;
+    }
+
+    .treatment-cards h3 {
+        font-size: 1.8rem;
+    }
+
+    .card-slider .card h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* DESATIVA O EFEITO PARALLAX EM MOBILE */
+    .parallax-container {
+        background-attachment: scroll;
+    }
+}
