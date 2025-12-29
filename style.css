@@ -228,20 +228,20 @@ nav {
     margin-bottom: 15px;
 }
 
-/* SEÇÃO DEPOIMENTOS */
+/*       SEÇÃO DEPOIMENTOS        */
+
 #depoimentos {
-    background: var(--light-beige);
+    background-color: var(--light-beige);
 }
 
 .slider {
     position: relative;
-    max-width: 800px;
+    max-width: 700px;  /* Ajuste a largura máxima do card branco */
     margin: 0 auto;
     background: var(--white);
-    padding: 50px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 20px; /* Um padding menor já que é só a imagem */
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
 }
 
 .slide {
@@ -252,18 +252,14 @@ nav {
     display: block;
 }
 
-.depoimento-texto {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    font-style: italic;
-    margin-bottom: 20px;
+/* Estilo para a imagem do depoimento dentro do slide */
+.slide img {
+    width: 100%; /* Faz a imagem ocupar toda a largura do card */
+    display: block; /* Remove espaços extras abaixo da imagem */
 }
 
-.depoimento-nome {
-    font-weight: 700;
-    color: var(--primary-green);
-}
 
+/* --- Botões de Navegação do Slider --- */
 .slider-btn {
     position: absolute;
     top: 50%;
@@ -272,14 +268,48 @@ nav {
     color: var(--white);
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
     cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Garante que os botões fiquem sobre a imagem se necessário */
 }
 
-.slider-btn.prev { left: -20px; }
-.slider-btn.next { right: -20px; }
+.slider-btn:hover {
+    background-color: var(--secondary-green);
+}
+
+.slider-btn.prev { 
+    left: -25px;
+}
+
+.slider-btn.next { 
+    right: -25px;
+}
+
+/* --- Link Final para o Google --- */
+.google-link-wrapper {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.google-reviews-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--primary-green);
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.google-reviews-link:hover {
+    opacity: 0.8;
+}
 
 /* SEÇÃO CONTATO */
 .contato-container {
@@ -557,7 +587,24 @@ footer {
 /*                     REGRAS DE RESPONSIVIDADE                        */
 /* =================================================================== */
 
-/* ---- Para Telas de Tablet e Menores (até 992px) ---- */
+@media (max-width: 992px) {
+    .treatment-block,
+    .treatment-block.reverse-layout {
+        flex-direction: column; /* Empilha a imagem e os cards */
+    }
+
+    .treatment-image,
+    .treatment-cards {
+        flex-basis: auto; /* Reseta a base de 50% */
+    }
+
+    .treatment-image {
+        height: 40vh; /* Altura da imagem no mobile */
+   }
+}
+
+
+/* ---- Para Telas de Tablet (até 992px) ---- */
 @media (max-width: 992px) {
     /* Esconde o menu normal e o botão do header */
     .nav-links,
@@ -567,7 +614,7 @@ footer {
 
     /* Mostra o botão hambúrguer */
     .menu-toggle {
-        display: block;
+        display: block; /* Garante que ele apareça */
         background: none;
         border: none;
         color: var(--primary-green);
@@ -575,7 +622,7 @@ footer {
         cursor: pointer;
     }
 
-    /* Estilo do menu mobile */
+    /* Estilo do menu mobile quando escondido */
     .mobile-nav {
         display: flex;
         flex-direction: column;
@@ -583,18 +630,19 @@ footer {
         gap: 20px;
         background: var(--white);
         position: fixed;
-        top: 65px;
+        top: 65px; /* Altura do header */
         left: 0;
         width: 100%;
         padding: 20px 0;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        transform: translateY(-150%);
+        transform: translateY(-150%); /* Começa fora da tela */
         transition: transform 0.3s ease-in-out;
-        z-index: 1100;
+        z-index: 1100; /* Fica abaixo do header, mas acima do resto */
     }
 
+    /* Estilo do menu mobile quando ATIVO */
     .mobile-nav.active {
-        transform: translateY(0);
+        transform: translateY(0); /* Desliza para dentro da tela */
     }
 
     .mobile-nav a {
@@ -612,14 +660,14 @@ footer {
     
     /* Ajuste da seção SOBRE */
     .sobre-container {
-        flex-direction: column;
+        flex-direction: column; /* Empilha vídeo e texto */
     }
 
     .sobre-texto h2 {
-        text-align: center;
+        text-align: center; /* Centraliza o título no mobile */
     }
 
-    /* Ajuste da seção TRATAMENTOS */
+    /* Ajuste do SPLIT SCREEN da seção TRATAMENTOS (que você já tinha) */
     .treatment-block,
     .treatment-block.reverse-layout {
         flex-direction: column;
@@ -631,34 +679,11 @@ footer {
     }
 
     .treatment-image {
-        height: auto; 
-        padding: 0;
+        height: 40vh;
     }
-    
-    .treatment-image img {
-        object-fit: initial;
-        height: auto;
-    }
-    
-    /* Correção do layout dos CARDS */
+
     .card-slider {
-        position: static;
-        min-height: unset;
-    }
-
-    .card-slider .card {
-        position: static;
-        opacity: 1;
-        transform: none;
-        visibility: visible;
-        width: 100%;
-        margin-bottom: 20px;
-        display: none;
-        transition: none;
-    }
-
-    .card-slider .card.active {
-        display: block;
+        min-height: 280px;
     }
 }
 
@@ -670,17 +695,13 @@ footer {
         padding: 50px 0;
     }
 
-    #tratamentos {
-        padding: 50px 0 0 0; /* Ajuste específico para tratamentos */
-    }
-
     h2 {
         font-size: 2rem;
     }
 
     /* Ajuste fino da seção HOME */
     .home-content h1 {
-        font-size: 1.8rem;
+        font-size: 1.8rem; /* Título ainda menor */
     }
 
     .home-content p {
@@ -689,7 +710,7 @@ footer {
 
     /* Ajuste da caixa de credenciais */
     .credentials-box {
-        flex-direction: column;
+        flex-direction: column; /* Empilha os registros */
         gap: 20px;
         align-items: flex-start;
     }
@@ -702,7 +723,11 @@ footer {
     .slider-btn.prev { left: -10px; }
     .slider-btn.next { right: -10px; }
 
-    /* Ajustes finos para a seção de TRATAMENTOS */
+    /* Ajuste do split-screen de tratamentos */
+    .treatment-image {
+        height: 35vh; /* Imagem um pouco menor */
+    }
+
     .treatment-cards {
         padding: 30px 20px;
     }
@@ -712,10 +737,10 @@ footer {
     }
 
     .card-slider .card h3 {
-        font-size: 1.3rem;
+        font-size: 1.3rem; /* Título dentro do card */
     }
     
-    /* DESATIVA O EFEITO PARALLAX EM MOBILE */
+    /* DESATIVA O EFEITO PARALLAX EM MOBILE (IMPORTANTE PARA PERFORMANCE) */
     .parallax-container {
         background-attachment: scroll;
     }
