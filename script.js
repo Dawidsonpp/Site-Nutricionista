@@ -49,7 +49,7 @@ showSlide(currentSlide);
 
 // ... (seu código JS anterior para header, slider de depoimentos, etc.) ...
 
-
+/*
 // LÓGICA PARA O CARROSSEL AUTOMÁTICO DA SEÇÃO DE TRATAMENTOS
 document.addEventListener('DOMContentLoaded', () => {
     const sliders = document.querySelectorAll('[data-slider]');
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sliders.forEach(slider => {
         const cards = slider.querySelectorAll('.card');
         let currentCardIndex = 0;
-        const slideInterval = 3000; // Tempo em milissegundos (3 segundos)
+        const slideInterval = 1300; // Tempo em milissegundos (3 segundos)
 
         function showNextCard() {
             // Remove a classe 'active' do card atual
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(showNextCard, slideInterval);
     });
 });
-
+*/
 // LÓGICA DO MENU HAMBÚRGUER
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileNav = document.querySelector('.mobile-nav');

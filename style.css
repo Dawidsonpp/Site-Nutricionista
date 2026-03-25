@@ -157,6 +157,7 @@ nav {
     transform: scale(1.05);
 }
 
+
 /* SEÇÃO SOBRE */
 #sobre {
     background: var(--light-beige);
@@ -176,7 +177,6 @@ nav {
     width: 100%;
     max-width: 500px;
     border-radius: 10px;
-    
 }
 
 .sobre-texto {
@@ -195,51 +195,129 @@ nav {
 }
 
 
-/* SEÇÃO TRATAMENTOS */
-.tratamentos-grid {
+/* ============================================= */
+/*       SEÇÃO TRATAMENTOS (CARDS ESTÁTICOS)     */
+/* ============================================= */
+
+#tratamentos {
+    padding: 80px 0;
+}
+
+#tratamentos .container {
+    padding-bottom: 50px;
+}
+
+.treatment-block {
+    display: flex;
+    width: 100%;
+    min-height: 90vh;
+    background-color: var(--light-beige);
+}
+
+.treatment-block.reverse-layout {
+    flex-direction: row-reverse;
+}
+
+.treatment-image,
+.treatment-cards {
+    flex-basis: 50%;
+}
+
+.treatment-image {
+    min-height: 90vh;
+}
+
+.treatment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.treatment-cards {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.cards-content-wrapper {
+    max-width: 500px;
+    width: 100%;
+}
+
+.treatment-cards h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* GRID DE CARDS ESTÁTICOS (PADRÃO PARA NUTRIÇÃO) */
+.cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
 
-.card {
+/* --- NOVA REGRA PARA O GRID DE PERSONAL --- */
+.personal-grid {
+    /* Define o grid para ter apenas UMA coluna */
+    grid-template-columns: 1fr;
+    /* Adiciona um espaçamento maior entre os dois cards */
+    gap: 50px; 
+    /* Limita a largura máxima para não ficar muito esticado */
+    max-width: 350px; 
+    /* Centraliza o grid de uma coluna */
+    margin: 0 auto; 
+}
+/* --- FIM DA NOVA REGRA --- */
+
+.cards-grid .card {
     background: var(--white);
-    padding: 30px;
+    padding: 60px 20px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+.cards-grid .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-.card i {
-    font-size: 3rem;
+.cards-grid .card i {
+    font-size: 2.2rem;
     color: var(--secondary-green);
-    margin-bottom: 20px;
-}
-
-.card h3 {
-    font-size: 2.5rem;
-    color: var(--primary-green);
     margin-bottom: 15px;
 }
 
-/*       SEÇÃO DEPOIMENTOS        */
+.cards-grid .card h3 {
+    font-size: 1.1rem;
+    color: var(--primary-green);
+    margin-bottom: 10px;
+}
 
+.cards-grid .card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+
+/* SEÇÃO DEPOIMENTOS */
 #depoimentos {
     background-color: var(--light-beige);
 }
 
 .slider {
     position: relative;
-    max-width: 700px;  /* Ajuste a largura máxima do card branco */
+    max-width: 700px;
     margin: 0 auto;
     background: var(--white);
-    padding: 20px; /* Um padding menor já que é só a imagem */
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 5px 25px rgba(0,0,0,0.07);
 }
@@ -252,14 +330,11 @@ nav {
     display: block;
 }
 
-/* Estilo para a imagem do depoimento dentro do slide */
 .slide img {
-    width: 100%; /* Faz a imagem ocupar toda a largura do card */
-    display: block; /* Remove espaços extras abaixo da imagem */
+    width: 100%;
+    display: block;
 }
 
-
-/* --- Botões de Navegação do Slider --- */
 .slider-btn {
     position: absolute;
     top: 50%;
@@ -276,7 +351,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10; /* Garante que os botões fiquem sobre a imagem se necessário */
+    z-index: 10;
 }
 
 .slider-btn:hover {
@@ -291,7 +366,6 @@ nav {
     right: -25px;
 }
 
-/* --- Link Final para o Google --- */
 .google-link-wrapper {
     text-align: center;
     margin-top: 30px;
@@ -310,6 +384,7 @@ nav {
 .google-reviews-link:hover {
     opacity: 0.8;
 }
+
 
 /* SEÇÃO CONTATO */
 .contato-container {
@@ -359,6 +434,7 @@ nav {
     transform: scale(1.2);
 }
 
+
 /* FOOTER */
 footer {
     background: var(--primary-green);
@@ -367,20 +443,18 @@ footer {
     padding: 20px 0;
 }
 
+
 /* AJUSTE PARA O VÍDEO NA SEÇÃO SOBRE */
 .sobre-imagem video {
     width: 100%;
-    max-width: 500px; /* Mesmo tamanho que a imagem tinha */
-    border-radius: 10px; /* Bordas arredondadas */
-    display: block; /* Garante que o vídeo não tenha espaços estranhos abaixo dele */
+    max-width: 500px;
+    border-radius: 10px;
+    display: block;
 }
 
 
 /* ANIMAÇÃO CONTÍNUA PARA A SEÇÃO HOME */
-
-/* 1. Define a nova animação com um ciclo completo */
 @keyframes continuousCycle {
-    /* --- FASE 1: APARECER (de 0% a 15% do tempo) --- */
     0% {
         opacity: 0;
         transform: translateY(20px);
@@ -389,68 +463,54 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
-
-    /* --- FASE 2: PERMANECER VISÍVEL (de 15% a 85%) --- */
-    /* O texto fica estático na tela durante esta fase */
     85% {
         opacity: 1;
         transform: translateY(0);
     }
-
-    /* --- FASE 3: DESAPARECER (de 85% a 100%) --- */
-    /* O texto sobe um pouco e some antes de recomeçar o ciclo */
     100% {
         opacity: 0;
         transform: translateY(-20px);
     }
 }
 
-/* 2. Aplica a animação em loop aos elementos */
 .home-content h1,
 .home-content p,
 .home-content .btn {
-    /* Aplica a animação com duração de 10 segundos, em loop infinito */
     animation-name: continuousCycle;
-    animation-duration: 10s; /* Duração total de cada ciclo */
+    animation-duration: 10s;
     animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite; /* AQUI ESTÁ A MÁGICA DO LOOP */
+    animation-iteration-count: infinite;
 }
 
-/* 3. Adiciona um atraso (delay) diferente para cada elemento */
-/* Isso mantém o efeito de um aparecer depois do outro, mas agora em cada ciclo */
-
-/* O título (h1) começa no tempo 0 */
 .home-content h1 {
     animation-delay: 0s;
 }
 
-/* O parágrafo (p) começa 0.3 segundos depois do título */
 .home-content p {
     animation-delay: 0.3s;
 }
 
-/* O botão (.btn) começa 0.6 segundos depois do título */
 .home-content .btn {
     animation-delay: 0.6s;
 }
 
-/* ESTILO PARA A CAIXA DE CREDENCIAIS NA SEÇÃO SOBRE */
 
+/* CREDENCIAIS */
 .credentials-box {
     display: flex;
-    gap: 30px; /* Espaçamento entre os dois registros */
-    margin: 30px 0; /* Espaçamento acima e abaixo da caixa */
+    gap: 30px;
+    margin: 30px 0;
     background-color: var(--white);
     padding: 20px;
     border-radius: 8px;
-    border-left: 5px solid var(--secondary-green); /* Detalhe de cor na borda */
+    border-left: 5px solid var(--secondary-green);
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .credential-item {
     display: flex;
     align-items: center;
-    gap: 15px; /* Espaçamento entre o ícone e o texto */
+    gap: 15px;
 }
 
 .credential-item i {
@@ -460,7 +520,7 @@ footer {
 
 .credential-item div {
     display: flex;
-    flex-direction: column; /* Coloca o título e o número um sobre o outro */
+    flex-direction: column;
 }
 
 .credential-item strong {
@@ -474,161 +534,39 @@ footer {
 }
 
 
-/* LAYOUT SPLIT-SCREEN PARA A SEÇÃO DE TRATAMENTOS */
-
-/* A seção agora não tem padding lateral para permitir o conteúdo full-width */
-#tratamentos {
-    padding: 0;
-}
-
-/* O contêiner do título continua centralizado */
-/*
-#tratamentos .container {
-    padding-bottom: 10px;
-}
-*/
-.treatment-block {
-    display: flex;
-    width: 100%;
-    min-height: 90vh; /* Garante uma boa altura para o bloco */
-    background-color: var(--light-beige);
-}
-
-/* O segundo bloco inverte a ordem dos filhos (imagem e cards) */
-.treatment-block.reverse-layout {
-    flex-direction: row-reverse;
-}
-
-.treatment-image,
-.treatment-cards {
-    flex-basis: 50%; /* Cada lado ocupa exatamente 50% */
-}
-
-/* --- LADO DA IMAGEM --- */
-.treatment-image {
-    height: 98vh; /* Mesma altura do bloco pai */
-    padding: 20px;
-}
-
-.treatment-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* ESSENCIAL: a imagem cobre o espaço sem distorcer */
-}
-
-/* AJUSTE DE FOCO PARA A IMAGEM DO PERSONAL TRAINER */
-.personal-image img {
-    /* O padrão é 'center center'. 'top' foca na parte de cima da imagem. */
-    object-position: 30% 20%; 
-}
-
-/* --- LADO DOS CARDS --- */
-.treatment-cards {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 40px;
-}
-
-.cards-content-wrapper {
-    max-width: 650px; /* Limita a largura do conteúdo para melhor leitura */
-    width: 100%;
-    height: 90%;
-}
-
-.treatment-cards h3 {
-    text-align: center;
-    font-size: 35px;
-}
-
-.card-slider {
-    position: relative;
-    min-height: 450px; /* Aumenta a altura para acomodar textos maiores */
-    width: 100%;
-}
-
-.card-slider .card {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out, visibility 0.1s;
-    background: var(--white); /* Adiciona fundo branco aos cards para contraste */
-}
-
-.card-slider .card.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* ESTILO PARA A SEÇÃO PARALLAX */
-
+/* PARALLAX */
 .parallax-container {
-    /* Altura da "janela" da imagem. Ajuste conforme necessário. */
     min-height: 400px;
-    
-    /* A MÁGICA DO PARALLAX ACONTECE AQUI */
-    /* Fixa a imagem de fundo em relação à janela de visualização */
     background-attachment: fixed;
-
-    /* Propriedades para garantir que a imagem fique bonita */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Não repete a imagem */
-    background-size: cover; /* Faz a imagem cobrir todo o espaço sem distorcer */
-    
-    /* A imagem em si é definida no HTML para maior flexibilidade */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-/* ============================================= */
-/*       AJUSTE DE FOCO DAS IMAGENS              */
-/* ============================================= */
 
-/* Alinha a imagem da seção de Nutrição pelo topo */
+/* AJUSTE DE FOCO DAS IMAGENS (DESKTOP) */
 .nutri-image img {
     object-position: 50% 18%;
 }
 
-/* Garante que a imagem da seção de Personal também esteja alinhada pelo topo */
 .personal-image img {
     object-position: 50% 25%;
 }
+
 
 /* =================================================================== */
 /*                     REGRAS DE RESPONSIVIDADE                        */
 /* =================================================================== */
 
-@media (max-width: 992px) {
-    .treatment-block,
-    .treatment-block.reverse-layout {
-        flex-direction: column; /* Empilha a imagem e os cards */
-    }
-
-    .treatment-image,
-    .treatment-cards {
-        flex-basis: auto; /* Reseta a base de 50% */
-    }
-
-    .treatment-image {
-        height: 40vh; /* Altura da imagem no mobile */
-   }
-}
-
-
 /* ---- Para Telas de Tablet (até 992px) ---- */
 @media (max-width: 992px) {
-    /* Esconde o menu normal e o botão do header */
     .nav-links,
     .btn-header {
         display: none;
     }
 
-    /* Mostra o botão hambúrguer */
     .menu-toggle {
-        display: block; /* Garante que ele apareça */
+        display: block;
         background: none;
         border: none;
         color: var(--primary-green);
@@ -636,7 +574,6 @@ footer {
         cursor: pointer;
     }
 
-    /* Estilo do menu mobile quando escondido */
     .mobile-nav {
         display: flex;
         flex-direction: column;
@@ -644,19 +581,18 @@ footer {
         gap: 20px;
         background: var(--white);
         position: fixed;
-        top: 65px; /* Altura do header */
+        top: 65px;
         left: 0;
         width: 100%;
         padding: 20px 0;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        transform: translateY(-150%); /* Começa fora da tela */
+        transform: translateY(-150%);
         transition: transform 0.3s ease-in-out;
-        z-index: 1100; /* Fica abaixo do header, mas acima do resto */
+        z-index: 1100;
     }
 
-    /* Estilo do menu mobile quando ATIVO */
     .mobile-nav.active {
-        transform: translateY(0); /* Desliza para dentro da tela */
+        transform: translateY(0);
     }
 
     .mobile-nav a {
@@ -666,45 +602,46 @@ footer {
         font-size: 1.2rem;
     }
 
-    /* Ajuste da seção HOME */
     .home-content h1 {
         font-size: 2rem;
         margin-top: 100px;
     }
     
-    /* Ajuste da seção SOBRE */
     .sobre-container {
-        flex-direction: column; /* Empilha vídeo e texto */
+        flex-direction: column;
     }
 
     .sobre-texto h2 {
-        text-align: center; /* Centraliza o título no mobile */
+        text-align: center;
     }
 
-    /* Ajuste do SPLIT SCREEN da seção TRATAMENTOS (que você já tinha) */
+    /* Ajuste responsivo de Tratamentos */
     .treatment-block,
     .treatment-block.reverse-layout {
-        flex-direction: column;
+        flex-direction: column; /* Empilha imagem e cards */
     }
 
     .treatment-image,
     .treatment-cards {
         flex-basis: auto;
+        width: 100%;
     }
 
     .treatment-image {
-        height: 40vh;
+        height: auto; /* Deixa imagem escalar sem achatar */
+        min-height: auto;
+        padding: 0;
     }
 
-    .card-slider {
-        min-height: 280px;
+    .treatment-image img {
+        height: auto;
+        object-fit: initial;
     }
 }
 
 
 /* ---- Para Telas de Celular (até 768px) ---- */
 @media (max-width: 768px) {
-    /* Reduz o padding geral das seções */
     section {
         padding: 50px 0;
     }
@@ -713,49 +650,45 @@ footer {
         font-size: 2rem;
     }
 
-    /* Ajuste fino da seção HOME */
     .home-content h1 {
-        font-size: 1.8rem; /* Título ainda menor */
+        font-size: 1.8rem;
     }
 
     .home-content p {
         font-size: 1rem;
     }
 
-    /* Ajuste da caixa de credenciais */
     .credentials-box {
-        flex-direction: column; /* Empilha os registros */
+        flex-direction: column;
         gap: 20px;
         align-items: flex-start;
     }
     
-    /* Ajuste do slider de depoimentos */
     .slider {
-        padding: 30px 20px;
+        padding: 20px 10px;
     }
 
-    .slider-btn.prev { left: -10px; }
-    .slider-btn.next { right: -10px; }
-
-    /* Ajuste do split-screen de tratamentos */
-    .treatment-image {
-        height: 35vh; /* Imagem um pouco menor */
-    }
+    .slider-btn.prev { left: -15px; }
+    .slider-btn.next { right: -15px; }
 
     .treatment-cards {
-        padding: 30px 20px;
+        padding: 20px;
     }
 
     .treatment-cards h3 {
         font-size: 1.8rem;
     }
 
-    .card-slider .card h3 {
-        font-size: 1.3rem; /* Título dentro do card */
+    /* Em celular, a grade dos cards fica em 1 coluna para leitura fácil */
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cards-grid .card h3 {
+        font-size: 1.2rem;
     }
     
-    /* DESATIVA O EFEITO PARALLAX EM MOBILE (IMPORTANTE PARA PERFORMANCE) */
     .parallax-container {
-        background-attachment: scroll;
+        background-attachment: scroll; /* Desliga parallax em celular por performance */
     }
 }
