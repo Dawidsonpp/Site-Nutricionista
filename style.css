@@ -116,10 +116,10 @@ nav {
 
 /* SEÇÃO INÍCIO (HOME) */
 #home {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/Image4.jpeg');
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/Image .jpeg');
     background-size: cover;
-    background-position: center 29%;
-    height: 100vh;
+    background-position: 40% 17%;
+    height: 120vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -490,7 +490,7 @@ footer {
 .treatment-block {
     display: flex;
     width: 100%;
-    min-height: 80vh; /* Garante uma boa altura para o bloco */
+    min-height: 90vh; /* Garante uma boa altura para o bloco */
     background-color: var(--light-beige);
 }
 
@@ -506,7 +506,7 @@ footer {
 
 /* --- LADO DA IMAGEM --- */
 .treatment-image {
-    height: 80vh; /* Mesma altura do bloco pai */
+    height: 98vh; /* Mesma altura do bloco pai */
     padding: 20px;
 }
 
@@ -519,21 +519,21 @@ footer {
 /* AJUSTE DE FOCO PARA A IMAGEM DO PERSONAL TRAINER */
 .personal-image img {
     /* O padrão é 'center center'. 'top' foca na parte de cima da imagem. */
-    object-position: top; 
+    object-position: 30% 20%; 
 }
 
 /* --- LADO DOS CARDS --- */
 .treatment-cards {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 40px;
 }
 
 .cards-content-wrapper {
     max-width: 650px; /* Limita a largura do conteúdo para melhor leitura */
     width: 100%;
-    height: 80%;
+    height: 90%;
 }
 
 .treatment-cards h3 {
@@ -543,7 +543,7 @@ footer {
 
 .card-slider {
     position: relative;
-    min-height: 350px; /* Aumenta a altura para acomodar textos maiores */
+    min-height: 450px; /* Aumenta a altura para acomodar textos maiores */
     width: 100%;
 }
 
@@ -555,7 +555,7 @@ footer {
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0.2s;
+    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out, visibility 0.1s;
     background: var(--white); /* Adiciona fundo branco aos cards para contraste */
 }
 
@@ -581,6 +581,20 @@ footer {
     background-size: cover; /* Faz a imagem cobrir todo o espaço sem distorcer */
     
     /* A imagem em si é definida no HTML para maior flexibilidade */
+}
+
+/* ============================================= */
+/*       AJUSTE DE FOCO DAS IMAGENS              */
+/* ============================================= */
+
+/* Alinha a imagem da seção de Nutrição pelo topo */
+.nutri-image img {
+    object-position: 50% 18%;
+}
+
+/* Garante que a imagem da seção de Personal também esteja alinhada pelo topo */
+.personal-image img {
+    object-position: 50% 25%;
 }
 
 /* =================================================================== */
